@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.0 on win32)" generated="20221009 20:31:30.970" rpa="false" schemaversion="3">
+<suite id="s1" name="Test" source="c:\Users\penploy\Documents\example-api-robot-test\api\test.robot">
+<test id="s1-t1" name="Call Post Cancel Withdrawal Test" line="9">
+<kw name="Open Workbook" library="RPA.Excel.Files">
+<arg>c:\\Users\\penploy\\Documents\\example-api-robot-test\\api//test.xlsx</arg>
+<doc>Open an existing Excel workbook.</doc>
+<msg timestamp="20221009 20:31:34.031" level="INFO">Opened workbook: &lt;RPA.Excel.Files.XlsxWorkbook object at 0x00000251E5A4B5E0&gt;</msg>
+<status status="PASS" starttime="20221009 20:31:32.348" endtime="20221009 20:31:34.035"/>
+</kw>
+<kw name="Set Active Worksheet" library="RPA.Excel.Files">
+<arg>Mobile -All Data</arg>
+<doc>Set the active worksheet.</doc>
+<status status="PASS" starttime="20221009 20:31:34.036" endtime="20221009 20:31:34.037"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${rows}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221009 20:31:34.038" level="INFO">${rows} = 0</msg>
+<status status="PASS" starttime="20221009 20:31:34.038" endtime="20221009 20:31:34.038"/>
+</kw>
+<kw name="Read Worksheet" library="RPA.Excel.Files">
+<var>@{rowsData}</var>
+<doc>Read the content of a worksheet into a list of dictionaries.</doc>
+<msg timestamp="20221009 20:31:34.044" level="INFO">@{rowsData} = [ {'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None, 'G': None, 'H': None, 'I': None, 'J': None, 'K': None, 'L': None, 'M': None, 'N': None, 'O': None, 'P': None, 'Q': None, 'R': None,...</msg>
+<status status="PASS" starttime="20221009 20:31:34.039" endtime="20221009 20:31:34.045"/>
+</kw>
+<for flavor="IN">
+<var>${data}</var>
+<value>@{rowsData}</value>
+<iter>
+<var name="${data}">{'A': None, 'B': None, 'C': None, 'D': None, 'E': None, 'F': None, 'G': None, 'H': None, 'I': None, 'J': None, 'K': None, 'L': None, 'M': None, 'N': None, 'O': None, 'P': None, 'Q': None, 'R': None, '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.048" level="INFO">${rows} = 1</msg>
+<status status="PASS" starttime="20221009 20:31:34.048" endtime="20221009 20:31:34.049"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.050" level="INFO">&amp;{rowData} = { A=None | B=None | C=None | D=None | E=None | F=None | G=None | H=None | I=None | J=None | K=None | L=None | M=None | N=None | O=None | P=None | Q=None | R=None | S=None | T=None | U=None | V=3. Init...</msg>
+<status status="PASS" starttime="20221009 20:31:34.049" endtime="20221009 20:31:34.050"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.051" level="INFO">None</msg>
+<status status="PASS" starttime="20221009 20:31:34.050" endtime="20221009 20:31:34.051"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.047" endtime="20221009 20:31:34.051"/>
+</iter>
+<iter>
+<var name="${data}">{'A': 'No', 'B': 'Test Scenario', 'C': 'UserReference', 'D': 'CIF400', 'E': 'CitizenId', 'F': 'Email', 'G': 'FirstName', 'H': 'LastName', 'I': 'firstNameEn', 'J': 'lastNameEn', 'K': 'Account Name', 'L...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.052" level="INFO">${rows} = 2</msg>
+<status status="PASS" starttime="20221009 20:31:34.052" endtime="20221009 20:31:34.052"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.053" level="INFO">&amp;{rowData} = { A=No | B=Test Scenario | C=UserReference | D=CIF400 | E=CitizenId | F=Email | G=FirstName | H=LastName | I=firstNameEn | J=lastNameEn | K=Account Name | L=DeviceID | M=Pin | N=AccountEligible | O=Ac...</msg>
+<status status="PASS" starttime="20221009 20:31:34.052" endtime="20221009 20:31:34.053"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.054" level="INFO">No</msg>
+<status status="PASS" starttime="20221009 20:31:34.053" endtime="20221009 20:31:34.054"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.051" endtime="20221009 20:31:34.054"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.055" level="INFO">${rows} = 3</msg>
+<status status="PASS" starttime="20221009 20:31:34.055" endtime="20221009 20:31:34.056"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.056" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.056" endtime="20221009 20:31:34.057"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.058" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.057" endtime="20221009 20:31:34.058"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.055" endtime="20221009 20:31:34.058"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.059" level="INFO">${rows} = 4</msg>
+<status status="PASS" starttime="20221009 20:31:34.058" endtime="20221009 20:31:34.059"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.060" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.059" endtime="20221009 20:31:34.060"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.061" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.060" endtime="20221009 20:31:34.061"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.058" endtime="20221009 20:31:34.061"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.063" level="INFO">${rows} = 5</msg>
+<status status="PASS" starttime="20221009 20:31:34.062" endtime="20221009 20:31:34.063"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.065" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.064" endtime="20221009 20:31:34.065"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.066" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.065" endtime="20221009 20:31:34.067"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.062" endtime="20221009 20:31:34.067"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.068" level="INFO">${rows} = 6</msg>
+<status status="PASS" starttime="20221009 20:31:34.068" endtime="20221009 20:31:34.068"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.070" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.069" endtime="20221009 20:31:34.070"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.071" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.070" endtime="20221009 20:31:34.072"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.067" endtime="20221009 20:31:34.072"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.076" level="INFO">${rows} = 7</msg>
+<status status="PASS" starttime="20221009 20:31:34.074" endtime="20221009 20:31:34.076"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.077" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.076" endtime="20221009 20:31:34.077"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.079" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.078" endtime="20221009 20:31:34.080"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.073" endtime="20221009 20:31:34.080"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.082" level="INFO">${rows} = 8</msg>
+<status status="PASS" starttime="20221009 20:31:34.081" endtime="20221009 20:31:34.082"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.083" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.082" endtime="20221009 20:31:34.083"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.085" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.084" endtime="20221009 20:31:34.085"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.080" endtime="20221009 20:31:34.085"/>
+</iter>
+<iter>
+<var name="${data}">{'A': '184', 'B': 'Success Case', 'C': '35099010788200000004618', 'D': 58011481, 'E': '3509901078822', 'F': 'SCB190 TEST', 'G': 'vasin.j@tcrbank.com', 'H': 'SCB190', 'I': 'TEST', 'J': 'SCB190', 'K': '...</var>
+<kw name="Evaluate" library="BuiltIn">
+<var>${rows}</var>
+<arg>${rows}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221009 20:31:34.086" level="INFO">${rows} = 9</msg>
+<status status="PASS" starttime="20221009 20:31:34.085" endtime="20221009 20:31:34.086"/>
+</kw>
+<kw name="Convert To Dictionary" library="Collections">
+<var>&amp;{rowData}</var>
+<arg>${data}</arg>
+<doc>Converts the given ``item`` to a Python ``dict`` type.</doc>
+<msg timestamp="20221009 20:31:34.087" level="INFO">&amp;{rowData} = { A=184 | B=Success Case | C=35099010788200000004618 | D=58011481 | E=3509901078822 | F=SCB190 TEST | G=vasin.j@tcrbank.com | H=SCB190 | I=TEST | J=SCB190 | K=ทดสอบ-58011481 | L=547626aa-b166-4004-933...</msg>
+<status status="PASS" starttime="20221009 20:31:34.086" endtime="20221009 20:31:34.087"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${rowData.A}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20221009 20:31:34.089" level="INFO">184</msg>
+<status status="PASS" starttime="20221009 20:31:34.087" endtime="20221009 20:31:34.089"/>
+</kw>
+<status status="PASS" starttime="20221009 20:31:34.085" endtime="20221009 20:31:34.089"/>
+</iter>
+<status status="PASS" starttime="20221009 20:31:34.046" endtime="20221009 20:31:34.090"/>
+</for>
+<status status="PASS" starttime="20221009 20:31:32.346" endtime="20221009 20:31:34.091"/>
+</test>
+<status status="PASS" starttime="20221009 20:31:30.978" endtime="20221009 20:31:34.095"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
